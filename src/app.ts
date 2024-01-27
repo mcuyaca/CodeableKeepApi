@@ -5,6 +5,7 @@ import logRequest from "./middlewares/logRequest";
 import errorHandler from "./middlewares/errorHandler";
 import userRouter from "./routers/user-router";
 import noteRouter from "./routers/note-router";
+import cors from "cors";
 
 if (process.env["NODE_ENV"] === "test") {
   dotenv.config({ path: ".env.test" });
@@ -15,6 +16,7 @@ if (process.env["NODE_ENV"] === "test") {
 export const app = express();
 
 app.use(express.json());
+app.use(cors());
 process.on("SIGINT", dbShutdown);
 process.on("SIGTERM", dbShutdown);
 app.use(logRequest);

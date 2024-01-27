@@ -24,7 +24,9 @@ export async function patchNote(username: string, body: Note, noteId: string) {
       400
     );
   }
+
   const dataNote = await userDB.getNoteById(noteId, userId);
+
   if (dataNote.rowCount === 0) {
     throw new ApiError("No se puede modificar una nota que no existe.", 400);
   }

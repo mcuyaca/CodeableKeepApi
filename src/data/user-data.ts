@@ -15,9 +15,10 @@ export async function getUserByUsername(username: string) {
 
 export async function getNoteById(noteId: string, userId: string) {
   const result = await query(
-    "SELECT * FROM notes WHERE id = $1 and user_id = $2 RETURNING * ;",
+    `SELECT * FROM notes WHERE id = $1 and user_id = $2  ;`,
     [noteId, userId]
   );
+
   return result;
 }
 
@@ -63,5 +64,6 @@ export async function deleteNote(userId: string, noteId: string) {
     "DELETE FROM notes WHERE user_id = $1 AND id = $2",
     [userId, noteId]
   );
+  console.log(result);
   return result;
 }
