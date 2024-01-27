@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "type": "module",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
@@ -36,7 +35,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
     "umzug": "^3.5.1",
