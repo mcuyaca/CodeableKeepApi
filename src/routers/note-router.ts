@@ -28,7 +28,7 @@ noteRouter.post(
       const username = req.params["username"];
       const body = req.body;
       const newNote = await postNote(username, body);
-      res.status(200).json({ ok: true, note: newNote });
+      res.status(200).json({ ok: true, notes: newNote });
     } catch (error) {
       next(error);
     }
@@ -41,7 +41,7 @@ noteRouter.patch("/:username/notes/:id", async (req, res, next) => {
     const body = req.body;
     const noteId = req.params.id;
     const editNote = await patchNote(username, body, noteId);
-    res.status(200).json({ ok: true, note: editNote });
+    res.status(200).json({ ok: true, notes: editNote });
   } catch (error) {
     next(error);
   }
