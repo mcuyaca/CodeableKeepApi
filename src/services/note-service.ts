@@ -2,7 +2,7 @@ import * as userDB from "../data/user-data";
 import { ApiError } from "../middlewares/errorHandler";
 import { DraftNote, Note, newNoteSchema } from "../models/note";
 import { getOrCreateUserId } from "./user-service";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 export async function getNotes(username: string) {
   return await userDB.getNotes(username);
